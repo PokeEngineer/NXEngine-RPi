@@ -95,6 +95,11 @@ SDL_Surface *sdl_screen;
 		return 1;
 	}
 	
+	#ifdef RPI1X11
+	stat("Creating EGL surface...");
+	InitEGL();
+	#endif
+
 	if (use_palette && !(sdl_screen->flags & SDL_HWPALETTE))
 	{
 		staterr("Graphics::InitVideo: failed to obtain exclusive access to hardware palette");

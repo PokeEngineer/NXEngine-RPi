@@ -32,7 +32,12 @@ bool freshstart;
 		staterr("ack, sdl_init failed: %s.", SDL_GetError());
 		return 1;
 	}
-	atexit(SDL_Quit);
+
+	#ifdef RPI1X11
+		atexit(exitFunc);
+	#else
+		atexit(SDL_Quit);
+	#endif
 	
 	// start up inputs first thing because settings_load may remap them
 	input_init();
@@ -209,6 +214,14 @@ ingame_error: ;
 	goto shutdown;
 }
 
+#ifdef RPI1X11
+void exitFunc()
+{
+	SDL_Quit();
+	stat("Destroying EGL surface...");
+	TerminateEGL();
+}
+#endif
 
 void gameloop(void)
 {

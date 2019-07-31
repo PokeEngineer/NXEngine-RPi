@@ -127,7 +127,12 @@ Dialog *dlg = opt.dlg;
 
 	dlg->Clear();
 	
-	dlg->AddItem("Resolution: ", _res_change, _res_get);
+	#ifdef RPI1
+	#elif defined RPI1X11
+	#else
+		dlg->AddItem("Resolution: ", _res_change, _res_get);
+	#endif
+
 	dlg->AddItem("Controls", EnterControlsMenu);
 	dlg->AddItem("Replay", EnterReplayMenu);
 	

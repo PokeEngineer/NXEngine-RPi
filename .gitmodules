@@ -1,0 +1,4 @@
+[submodule "SDL"]
+	path = SDL
+	url = https://github.com/PokeEngineer/SDL-1.2.15-raspberrypi
+	branch = master
