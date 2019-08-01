@@ -66,7 +66,12 @@ bool Graphics::init(int resolution)
 void Graphics::close()
 {
 	stat("Graphics::Close()");
-	SDL_ShowCursor(true);
+
+	#if defined (RPI1) || defined (RPI1X11)
+		SDL_ShowCursor(false);
+	#else
+		SDL_ShowCursor(true);
+	#endif
 }
 
 /*
@@ -107,8 +112,13 @@ SDL_Surface *sdl_screen;
 	}
 	
 	SDL_WM_SetCaption("NXEngine", NULL);
-	SDL_ShowCursor(is_fullscreen == false);
-	
+
+	#if defined (RPI1) || defined (RPI1X11)
+		SDL_ShowCursor(false);
+	#else
+		SDL_ShowCursor(is_fullscreen == false);
+	#endif
+
 	screen = new NXSurface(sdl_screen, false);
 	if (!drawtarget) drawtarget = screen;
 	return 0;
