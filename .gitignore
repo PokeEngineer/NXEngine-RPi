@@ -1,0 +1,36 @@
+# Object files
+*.d
+*.o
+*.obj
+
+# Data files
+bin/debug.txt
+bin/drum.pcm
+bin/profile.dat
+bin/settings.dat
+bin/stage.dat
+bin/wavetable.dat
+bin/run.sh
+bin/Doukutsu.exe
+bin/DoConfig.exe
+bin/Config.dat
+bin/Manual.html
+bin/OrgView.exe
+bin/Readme.txt
+bin/cavestoryen.zip
+cavestoryen.zip
+
+# Executable files
+bin/nx
+
+# Data directories
+bin/lib/
+bin/data/
+bin/org/
+bin/pxt/
+bin/endpic/
+bin/Manual/
+bin/CaveStory/
+bin/cavestoryen/
+cavestoryen/
+CaveStory/
