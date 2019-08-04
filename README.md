@@ -1,13 +1,18 @@
 # NXEngine-RPi
 A rewrite of the original port of NXEngine for the Raspberry Pi.
 ---
-I noticed the downloads for the original port were broken and the source code was missing, so I took it upon myself to rewrite it.
 
 ![Screenshot](https://raw.githubusercontent.com/PokeEngineer/NXEngine-RPi/master/screenshots/nxengine1.png)
+
+I noticed the downloads for the original port were broken and the source code was missing, so I took it upon myself to rewrite it.
 
 ## Upgrades from the original port:
 * Source code is now available!
 * Can now play on both the desktop and in a headless enviroment!
+
+## Cloning:
+To clone this repo, you need to run:\
+`git clone --recursive https://github.com/PokeEngineer/NXEngine-RPi.git`
 
 ## Dependencies:
 You need to install:
@@ -15,6 +20,9 @@ You need to install:
 * libsdl-ttf2.0-dev
 * libegl1-mesa-dev
 * libx11-dev
+
+## Binaries:
+If you just want to download and play, go to the [Releases](https://github.com/PokeEngineer/NXEngine-RPi/releases) tab.
 
 ## Building:
 * To build for the Raspberry Pi 1/Zero and for the desktop run: `./build_rpi1_x11.sh`
@@ -40,4 +48,11 @@ Finally go into the folder where everything is located and
 
 * On the Raspberry Pi 1/Zero, the run script has to be run with sudo because of some bug with SDL not being able to access the video device as the default user (this was mentioned above).
 
-* If there are other applications open on the Raspberry Pi 1/Zero, the game will lag at random intervals.
+* If there are other applications open on the Raspberry Pi 1/Zero, the game will stutter at random intervals.
+
+# Credits:
+* Thanks to Caitlin Shaw for making [NXEngine](http://nxengine.sourceforge.net/)
+
+* Thanks to [Vanfanel](https://github.com/vanfanel) for making a version of [SDL with a DispmanX backend](https://github.com/vanfanel/SDL-1.2.15-raspberrypi)
+
+* And finally, thanks to Daisuke Amaya for making Cave Story!
