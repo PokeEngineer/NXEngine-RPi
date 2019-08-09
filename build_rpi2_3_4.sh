@@ -2,7 +2,7 @@
 
 # Remove files specific to the RPi 1 build if they exist
 if [ -d "./bin/lib" ]; then
-rm -r ./lib
+rm -r ./bin/lib
 fi
 
 if [ -f "./bin/run.sh" ]; then

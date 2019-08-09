@@ -7,7 +7,7 @@ make
 
 # Make library directory if it doesn't exist
 if [ ! -d "../bin/lib" ]; then
-mkdir ../lib
+mkdir ../bin/lib
 fi
 
 # Copy the library to the correct directory if the file is updated or it doesn't exist
