@@ -4,11 +4,12 @@
 #include "../common/basics.h"
 #include "egl.fdh"
 
-	EGLDisplay g_eglDisplay = 0;
-	EGLConfig g_eglConfig = 0;
-	EGLContext g_eglContext = 0;
-	EGLSurface g_eglSurface = 0;
-        Display *g_x11Display = NULL;
+EGLDisplay g_eglDisplay = 0;
+EGLConfig g_eglConfig = 0;
+EGLContext g_eglContext = 0;
+EGLSurface g_eglSurface = 0;
+
+Display *g_x11Display = NULL;
 
 // consts
 #define COLOURDEPTH_RED_SIZE  		5
@@ -17,15 +18,15 @@
 #define COLOURDEPTH_DEPTH_SIZE		16
 
 static const EGLint g_configAttribs[] ={
-										  EGL_RED_SIZE,      	    COLOURDEPTH_RED_SIZE,
-										  EGL_GREEN_SIZE,    	    COLOURDEPTH_GREEN_SIZE,
-										  EGL_BLUE_SIZE,     	    COLOURDEPTH_BLUE_SIZE,
-										  EGL_DEPTH_SIZE,	    COLOURDEPTH_DEPTH_SIZE,
-										  EGL_SURFACE_TYPE,         EGL_WINDOW_BIT,
-										  EGL_RENDERABLE_TYPE,      EGL_OPENGL_ES_BIT,
-										  EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE,
-										  EGL_NONE
-									   };
+		EGL_RED_SIZE,      	    COLOURDEPTH_RED_SIZE,
+		EGL_GREEN_SIZE,    	    COLOURDEPTH_GREEN_SIZE,
+		EGL_BLUE_SIZE,     	    COLOURDEPTH_BLUE_SIZE,
+		EGL_DEPTH_SIZE,     	COLOURDEPTH_DEPTH_SIZE,
+		EGL_SURFACE_TYPE,         EGL_WINDOW_BIT,
+		EGL_RENDERABLE_TYPE,      EGL_OPENGL_ES_BIT,
+		EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE,
+		EGL_NONE
+};
 
 /*===========================================================
 Initialise EGL. Call straight after SDL_SetVideoMode()
