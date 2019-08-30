@@ -10,5 +10,6 @@ rm ./bin/run.sh
 fi
 
 # Build NXEngine
+cd ./src
 make clean
 make

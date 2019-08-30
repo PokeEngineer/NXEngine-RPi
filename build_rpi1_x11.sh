@@ -14,9 +14,9 @@ fi
 cp -u ./build/.libs/libSDL-1.2.so.0 ../bin/lib
 
 # Build NXEngine
-cd ../
+cd ../src
 make clean
 make RPI1X11=1
 
 # Copy the run script for the RPi 1 if the file is updated or it doesn't exist
-cp -u ./runscripts/run_rpi1.sh ./bin/run.sh
+cp -u ./runscripts/run_rpi1.sh ../bin/run.sh

@@ -8,9 +8,9 @@ ifeq ($(RPI1), 1)
 	 CFLAGS += -DRPI1
 endif
 
-all: bin/nx
+all: ../bin/nx
 
-bin/nx:  main.o game.o object.o ObjManager.o \
+../bin/nx:  main.o game.o object.o ObjManager.o \
 	 map.o TextBox/TextBox.o TextBox/YesNoPrompt.o TextBox/ItemImage.o TextBox/StageSelect.o \
 	 TextBox/SaveSelect.o profile.o settings.o platform.o platform/Linux/vbesync.o \
 	 caret.o slope.o player.o playerstats.o p_arms.o \
@@ -39,7 +39,7 @@ bin/nx:  main.o game.o object.o ObjManager.o \
 	 autogen/objnames.o stagedata.o common/FileBuffer.o common/InitList.o common/BList.o \
 	 common/StringList.o common/DBuffer.o common/DString.o common/bufio.o common/stat.o \
 	 common/misc.o
-	g++ -o bin/nx \
+	g++ -o ../bin/nx \
 	 main.o game.o object.o ObjManager.o \
 	 map.o TextBox/TextBox.o TextBox/YesNoPrompt.o TextBox/ItemImage.o TextBox/StageSelect.o \
 	 TextBox/SaveSelect.o profile.o settings.o platform.o platform/Linux/vbesync.o \
